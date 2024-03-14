@@ -127,11 +127,11 @@ tailscale内网穿透工具代理IP列表，提高国内用户访问速度
 
 ## 使用步骤
 
-1. 注册一个tailscale的账户。
+1. 注册一个tailscale的账户并本机下载一个客户端。
 注册地址：https://login.tailscale.com/login?next_url=%2Fadmin%2Facls%2Ffile
 客户端下载地址：https://pkgs.tailscale.com/stable/
 
-2. 添加代理IP配置
+3. 添加代理IP配置
 
 ![image](https://github.com/sky984-11/tailscale-proxy-ip/assets/58068214/96042857-0019-4f58-baa7-e8e34b72974a)
 
