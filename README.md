@@ -135,6 +135,29 @@ tailscale内网穿透工具代理IP列表，提高国内用户访问速度
 
 ![image](https://github.com/sky984-11/tailscale-proxy-ip/assets/58068214/96042857-0019-4f58-baa7-e8e34b72974a)
 
+参考配置如下，IPV4根据需要修改调整
+```json
+{
+	"acls": [{"action": "accept", "dst": ["*:*"], "src": ["*"]}],
+	"derpMap": {"OmitDefaultRegions": true, "Regions": {"901": {"Nodes": [{
+		"DERPPort": 33445,
+		"IPv4":     "101.200.198.253",
+		"InsecureForTests": true,
+		"Name":             "901a",
+		"RegionID":         901,
+	}], "RegionCode": "sky", "RegionID": 901, "RegionName": "sky"}}},
+	"nodeAttrs": [{"attr": ["funnel"], "target": ["autogroup:member"]}],
+	"ssh": [{
+		"action": "check",
+		"dst":    ["autogroup:self"],
+		"src":    ["autogroup:member"],
+		"users":  ["autogroup:nonroot", "root"],
+	}],
+}
+
+
+```
+
 3. 重启客户端(如果代理没生效重启，生效的话可以不进行这一步)
 
 
