@@ -23,5 +23,18 @@ jobs:
       - name: Install Masscan 
         run: sudo apt install masscan -y
 
-      - name: Scan Single IP
-        run:  sudo masscan 182.61.200.6 -p 1-1000 --rate=1000
+      - name: Create Config File
+        run: |
+          echo "rate =  5000" > myscan.conf
+          echo "target = 192.168.1.1" >> myscan.conf
+          echo "output-format = xml" >> myscan.conf
+          echo "output-status = open" >> myscan.conf
+          echo "output-filename = scan.xml" >> myscan.conf
+          echo "ports = 33445" >> myscan.conf
+          echo "range = 182.61.200.6/32" >> myscan.conf
+
+      - name: Scan IP
+        run:  sudo masscan myscan.conf
+
+      - name: cat  xml
+        run:  cat scan.xml
