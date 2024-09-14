@@ -20,17 +20,8 @@ jobs:
       - name: Install Dependencies
         run: sudo apt-get install -y libpcap-dev
 
-      - name: Clone Masscan Repository
-        run: git clone https://github.com/robertdavidgraham/masscan.git
-
-      - name: Build Masscan
-        working-directory: masscan
-        run: make
-
-      - name: Move Masscan to System Path
-        run: |
-          sudo cp masscan/masscan /usr/local/bin/
-          sudo chmod +x /usr/local/bin/masscan
+      - name: Install Masscan 
+        run: sudo apt install masscan -y
 
       - name: Verify Installation
         run: masscan --version
