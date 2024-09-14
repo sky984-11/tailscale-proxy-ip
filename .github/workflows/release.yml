@@ -24,4 +24,4 @@ jobs:
         run: sudo apt install masscan -y
 
       - name: Scan Single IP
-        run:  masscan 182.61.200.6 -p 1-1000 --rate=1000
+        run:  sudo masscan 182.61.200.6 -p 1-1000 --rate=1000
