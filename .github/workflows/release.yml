@@ -23,8 +23,5 @@ jobs:
       - name: Install Masscan 
         run: sudo apt install masscan -y
 
-      - name: masscan version
-        run: masscan --version
-
       - name: Scan Single IP
         run:  masscan 182.61.200.6 -p 1-1000 --rate=1000
