@@ -34,7 +34,7 @@ jobs:
           echo "range = 182.61.200.6/32" >> myscan.conf
 
       - name: Scan IP
-        run:  sudo masscan myscan.conf
+        run:  sudo masscan -c myscan.conf
 
       - name: cat  xml
         run:  cat scan.xml
