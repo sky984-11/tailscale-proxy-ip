@@ -30,7 +30,7 @@ jobs:
           echo "output-status = open" >> myscan.conf
           echo "output-filename = scan.xml" >> myscan.conf
           echo "ports = 33445" >> myscan.conf
-          echo "range = 182.61.200.0/24" >> myscan.conf
+          echo "range = "61.141.76.0/24" >> myscan.conf
 
       - name: Scan IP
         run:  sudo masscan -c myscan.conf
