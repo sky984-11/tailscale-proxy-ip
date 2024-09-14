@@ -38,5 +38,21 @@ jobs:
       - name: cat  scan.json
         run:  cat scan.json
 
+      - name: Script Init
+        run:  pip3 install requests
+
       - name: Run Python Script
         run: python3 ./parser.py
+
+      - name: Set up Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Commit and push changes
+        run: |
+            git add README.md
+            git commit -m "Update README via GitHub Actions"
+            git push
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
