@@ -26,14 +26,14 @@ jobs:
       - name: Create Config File
         run: |
           echo "rate =  5000" > myscan.conf
-          echo "output-format = xml" >> myscan.conf
+          echo "output-format = json" >> myscan.conf
           echo "output-status = open" >> myscan.conf
-          echo "output-filename = scan.xml" >> myscan.conf
+          echo "output-filename = scan.json" >> myscan.conf
           echo "ports = 33445" >> myscan.conf
           echo "range = 61.141.76.0/24" >> myscan.conf
 
       - name: Scan IP
         run:  sudo masscan -c myscan.conf
 
-      - name: cat  xml
-        run:  cat scan.xml
+      - name: cat  scan.json
+        run:  cat scan.json
