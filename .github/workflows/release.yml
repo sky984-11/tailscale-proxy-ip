@@ -1,14 +1,13 @@
 name: Setup Masscan Environment
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
-
-#   schedule:
-#     # 每周一的早上 8 点 (UTC 时间)
-#     - cron: '0 8 * * 1'
+#   push:
+#     branches: [main]
+#   pull_request:
+#     branches: [main]
+  schedule:
+    # 每周一的早上 8 点 (UTC 时间)
+    - cron: '0 8 * * 1'
 
 jobs:
   setup-masscan:
@@ -30,8 +29,8 @@ jobs:
       - name: Scan IP
         run:  sudo masscan -c myscan.conf
 
-      - name: cat  scan.json
-        run:  cat scan.json
+    #   - name: cat  scan.json
+    #     run:  cat scan.json
 
       - name: Script Init
         run:  pip3 install requests
