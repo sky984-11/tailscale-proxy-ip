@@ -37,3 +37,6 @@ jobs:
 
       - name: cat  scan.json
         run:  cat scan.json
+
+      - name: Run Python Script
+        run: python3 parser,py
