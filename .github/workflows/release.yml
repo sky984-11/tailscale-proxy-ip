@@ -26,7 +26,6 @@ jobs:
       - name: Create Config File
         run: |
           echo "rate =  5000" > myscan.conf
-          echo "target = 192.168.1.1" >> myscan.conf
           echo "output-format = xml" >> myscan.conf
           echo "output-status = open" >> myscan.conf
           echo "output-filename = scan.xml" >> myscan.conf
